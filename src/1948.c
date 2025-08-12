@@ -17,7 +17,7 @@ int main(){
         printf("n/a\n");
         return 0;
     }
-    int b = maxdelen(a,b); //Долго искал это
+    int b = maxdelen(a,b);
     if (maxdelen(a,b)==-1){
         printf("n/a\n");
     }
@@ -26,9 +26,7 @@ int main(){
     }
 };
 
-//Краевой случай нельзя минусовые использует, на ноль, меньшее на большее
 int delen(int a, int b) {
-    //Вычитать пока не получиться ноль и записать количество вычитаний
     int number = 0;
     if (b == 0){
         return 43564776;
@@ -43,19 +41,19 @@ int delen(int a, int b) {
         aaa = false;
         b = b*(-1);
     }
-    if (aaa == false){
-        number = number*(-1);
-    }
     while (abs(a) >= b)
     {
         a = a-b;
         number++;
     }
+    if (aaa == false){
+        number = number*(-1);
+    }
     return number;
 };
 
 
-int procentdel(int a, int b){ //Тоесть он пишет ноль как есть остаток от деления, но пишет один когда нет остатка
+int procentdel(int a, int b){
     int absa = abs(a);
     int absb = abs(b);
     if (absb == 0){
@@ -78,10 +76,9 @@ int prostodel(int a, int b){
     return 1;
 }
 
-//Добавь защиту от 0*4 и типо того
 int maxdelen(int a, int b) {
     for (int b = abs(a); b>=1; b--){
-        if(procentdel(a, b)==1 && prostodel(a, b)){ //Я думаю тут надо добавить типо делиться только на 1 и на само себя (частично был прав)
+        if(procentdel(a, b)==1 && prostodel(a, b)){
             return b;
         }
     }
