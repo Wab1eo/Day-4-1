@@ -29,8 +29,8 @@ int main(){
 int delen(int a, int b) {
     int number = 0;
     if (b == 0){
-        return 43564776;
         number = 0;
+        return 43564776;
     }
     bool aaa = true;
     if(a < 0 && b > 0){
